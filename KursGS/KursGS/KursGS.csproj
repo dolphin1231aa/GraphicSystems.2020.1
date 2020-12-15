@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ImageSource\mario.png" />
+    <None Remove="ImageSource\sonic.png" />
+    <None Remove="ImageSource\spyro.png" />
+    <None Remove="ImageSource\Stadium.png" />
+    <None Remove="ImageSource\Track.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="ImageSource\mario.png" />
+    <Resource Include="ImageSource\sonic.png" />
+    <Resource Include="ImageSource\spyro.png" />
+    <Resource Include="ImageSource\Stadium.png" />
+    <Resource Include="ImageSource\Track.png" />
+  </ItemGroup>
+
+</Project>
