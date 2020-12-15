@@ -1,0 +1,10 @@
+C:\Users\User\Desktop\Start\STUDY\5 sem\GS\attempts_to_create_a_game\Game\Game\bin\Debug\Game.exe.config
+C:\Users\User\Desktop\Start\STUDY\5 sem\GS\attempts_to_create_a_game\Game\Game\bin\Debug\Game.exe
+C:\Users\User\Desktop\Start\STUDY\5 sem\GS\attempts_to_create_a_game\Game\Game\bin\Debug\Game.pdb
+C:\Users\User\Desktop\Start\STUDY\5 sem\GS\attempts_to_create_a_game\Game\Game\obj\Debug\Game.csprojAssemblyReference.cache
+C:\Users\User\Desktop\Start\STUDY\5 sem\GS\attempts_to_create_a_game\Game\Game\obj\Debug\Game.Form1.resources
+C:\Users\User\Desktop\Start\STUDY\5 sem\GS\attempts_to_create_a_game\Game\Game\obj\Debug\Game.Properties.Resources.resources
+C:\Users\User\Desktop\Start\STUDY\5 sem\GS\attempts_to_create_a_game\Game\Game\obj\Debug\Game.csproj.GenerateResource.cache
+C:\Users\User\Desktop\Start\STUDY\5 sem\GS\attempts_to_create_a_game\Game\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Start\STUDY\5 sem\GS\attempts_to_create_a_game\Game\Game\obj\Debug\Game.exe
+C:\Users\User\Desktop\Start\STUDY\5 sem\GS\attempts_to_create_a_game\Game\Game\obj\Debug\Game.pdb
