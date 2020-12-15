@@ -1,0 +1,29 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img/coffee.png</file>
+        <file>img/croissant.png</file>
+        <file>fonts/score.ttf</file>
+        <file>img/background.png</file>
+        <file>sprite/croissant-left.png</file>
+        <file>sprite/croissant-right.png</file>
+        <file>sprite/player-left.png</file>
+        <file>sprite/player-right.png</file>
+        <file>img/coffee1.png</file>
+        <file>sound/croissant/1.mp3</file>
+        <file>sound/croissant/2.mp3</file>
+        <file>sound/croissant/3.mp3</file>
+        <file>sound/croissant/4.mp3</file>
+        <file>sound/croissant/5.mp3</file>
+        <file>sound/croissant/6.mp3</file>
+        <file>sound/background_music.mp3</file>
+        <file>img/platform.png</file>
+        <file>icon/corgi.png</file>
+        <file>icon/bang.png</file>
+        <file>icon/pepe.png</file>
+        <file>icon/chick.png</file>
+        <file>img/clover.png</file>
+        <file>sound/death/bang.mp3</file>
+        <file>sound/death/win.mp3</file>
+        <file>sound/death/funeral.mp3</file>
+    </qresource>
+</RCC>
