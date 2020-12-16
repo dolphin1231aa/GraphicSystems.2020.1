@@ -18,10 +18,10 @@ Player::Player(QObject *parent) :
 
 }
 
-void Player::move_horizontal(char side) {
-    if (side == 1)  sprite->changeImg(new QPixmap(":/sprite/player-right.png"));
-    if (side == -1) sprite->changeImg(new QPixmap(":/sprite/player-left.png"));
-    sprite->setPos(playerX += side*speed, playerY);
+void Player::move_horizontal() {
+    if (speed > 0)  sprite->changeImg(new QPixmap(":/sprite/player-right.png"));
+    if (speed < 0) sprite->changeImg(new QPixmap(":/sprite/player-left.png"));
+    sprite->setPos(playerX += speed, playerY);
     position_frame = sprite->nextFrame(1);
     (position_frame != frame_number-1 || position_frame != step_number) ? timer_step->start(140) : timer_step->stop();
 }
@@ -61,12 +61,17 @@ void Player::move_vertical() {
     }
 
 }
+
 void Player::setPositionVertical(char position_vertical) {
     this->position_vertical = position_vertical;
 }
 
 void Player::setGroundY(int groundY){
     this->groundY = groundY;
+}
+
+void Player::setSpeed(int speed) {
+    this->speed = speed;
 }
 
 Sprite* Player::getSprite() {
@@ -90,7 +95,7 @@ int Player::getWidth() {
     return player_sprite->width() / frame_number;
 }
 
-unsigned char Player::getSpeed() {
+int Player::getSpeed() {
     return speed;
 }
 

@@ -52,8 +52,6 @@ private:
     int const minX = 0;
     int const maxX = 15000;
 
-    char move_side = 0;
-
     unsigned char coffeeMax = 20;
     unsigned char croissantMax = 36;
     unsigned char platformMax = 80;

@@ -144,11 +144,9 @@ void View::gameMove() {
                 if (player->getPosition().x() >= this->width()/3 - player->getWidth()/4 && player->getPosition().x() <= maxX - this->width()/2) {
                     setFrame();
                 }
-                x -= player->getSpeed();
-                move_side = -1;
-                player->move_horizontal(move_side);
-            } else {
-                player->move_horizontal(0);
+                player->setSpeed(-abs(player->getSpeed()));
+                x += player->getSpeed();
+                player->move_horizontal();
             }
         }
         if(GetAsyncKeyState(68) ) { // клавиша D
@@ -156,11 +154,9 @@ void View::gameMove() {
                 if (player->getPosition().x() >= this->width()/2 && player->getPosition().x() <= maxX - this->width()/3) {
                     setFrame();
                 }
+                player->setSpeed(abs(player->getSpeed()));
                 x += player->getSpeed();
-                move_side = 1;
-                player->move_horizontal(move_side);
-            } else {
-                player->move_horizontal(0);
+                player->move_horizontal();
             }
         }
         if(GetAsyncKeyState(VK_SPACE) ) {
@@ -176,29 +172,32 @@ void View::gameMove() {
         foreach (QGraphicsItem *item, foundItemsRight) {
             if (item == player->getSprite()) continue;
             if (item == croissan->getSprite() &&  croissan->getSprite()->x() <= maxX) {
-                croissan->getTimer()->myStart(80, 1);
+                croissan->setSpeed(abs(croissan->getSpeed()));
+                croissan->getTimer()->start(80);
             }
         }
 
         foreach (QGraphicsItem *item, foundItemsLeft) {
             if (item == player->getSprite()) continue;
             if (item == croissan->getSprite() &&  croissan->getSprite()->x() >= minX) {
-                croissan->getTimer()->myStart(80, -1);
+                croissan->setSpeed(-abs(croissan->getSpeed()));
+                croissan->getTimer()->start(80);
             }
         }
         if (!croissan->getTimer()->isActive()) croissan->step();
+
     }
 }
 
 
 void View::gameTimer() {
 
-     QList<QGraphicsItem *> foundItemsClose = scene->items(QRect(player->getPosition().x(),
+    QList<QGraphicsItem *> foundItemsClose = scene->items(QRect(player->getPosition().x(),
                                                                 player->getPosition().y() - player->getHeight(),
                                                                 player->getWidth(),
                                                                 player->getHeight()));
 
-     foreach (QGraphicsItem *item, foundItemsClose) {
+    foreach (QGraphicsItem *item, foundItemsClose) {
         if (item == player->getSprite()) continue;
         deleteItem(item);
     }
@@ -214,8 +213,8 @@ void View::gameTimer() {
                                                                     player->getWidth() - player->getWidth()/1.5,
                                                                     platform_img->height()/2));
 
-    if (move_side == 1) findPlatform(foundPlatformAhead, foundPlatformBehind);
-    if (move_side == -1) findPlatform(foundPlatformBehind, foundPlatformAhead);
+    if (player->getSpeed() > 0) findPlatform(foundPlatformAhead, foundPlatformBehind);
+    if (player->getSpeed() < 0) findPlatform(foundPlatformBehind, foundPlatformAhead);
 
     if (foundPlatformAhead.size() == 0 && foundPlatformBehind.size() == 0 && player->getPosition().y() != 0 && y != 0
             &&  (player->getPositionVertical() == 0 || player->getPositionVertical() == -1)) {
@@ -422,7 +421,7 @@ QPoint View::randomPos(unsigned int width, unsigned int height, int randY) {
 
 
 unsigned char View::randomSpeed() {
-    int speed = qrand() % 10 + 5;
+    int speed = qrand() % 15 + 5;
     return speed;
 }
 

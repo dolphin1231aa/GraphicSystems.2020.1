@@ -15,19 +15,19 @@ Croissant::Croissant(int croissantX, int croissantY, int speed) {
     step_length = croissant_sprite->width()/frame_number;
     sprite->setPos(croissantX, croissantY);
 
-    timer_move = new MyTimer();
-    connect(timer_move, SIGNAL(my_timeout(char)), this , SLOT(move(char)));
+    timer_move = new QTimer();
+    connect(timer_move, &QTimer::timeout, this , &Croissant::move);
 
     timer_step = new QTimer();
     connect(timer_step, &QTimer::timeout, this, &Croissant::step);
 }
 
 
-void Croissant::move(char side) {
-    if (side == 1) sprite->changeImg(new QPixmap(":/sprite/croissant-right.png"));
-    if (side == -1) sprite->changeImg(new QPixmap(":/sprite/croissant-left.png"));
+void Croissant::move() {
+    if (speed > 0) sprite->changeImg(new QPixmap(":/sprite/croissant-right.png"));
+    if (speed < 0) sprite->changeImg(new QPixmap(":/sprite/croissant-left.png"));
     position_frame = sprite->nextFrame(1);
-    sprite->setPos(croissantX += side*speed, croissantY);
+    sprite->setPos(croissantX += speed, croissantY);
 }
 
 void Croissant::step() {
@@ -45,12 +45,19 @@ void Croissant::step() {
     }
 }
 
+void Croissant::setSpeed(int speed) {
+    this->speed = speed;
+}
 
 Sprite* Croissant::getSprite() {
     return sprite;
 }
 
-MyTimer* Croissant::getTimer() {
+int Croissant::getSpeed() {
+    return speed;
+}
+
+QTimer *Croissant::getTimer() {
     return timer_move;
 }
 

@@ -2,7 +2,7 @@
 #define CROISSANT_H
 
 #include "sprite.h"
-#include "mytimer.h"
+#include <QTimer>
 
 class Croissant: public QObject{
     Q_OBJECT
@@ -14,28 +14,30 @@ public:
 
 protected:
     void step();
+    int getSpeed();
 
     Sprite *getSprite();
-    MyTimer *getTimer();
+    QTimer *getTimer();
+    void setSpeed(int);
 
     unsigned char frame_number = 9;
     unsigned char step_number = 5;
     unsigned char step_length = 0;
 
 private slots:
-    void move(char);
+    void move();
 
 private:
     Sprite *sprite;
-    MyTimer *timer_move;
 
     int croissantX = 0;
     int croissantY = 0;
+    int speed;
 
     unsigned char position_frame = 0;
-    unsigned char speed = 10;
 
     QPixmap *croissant_sprite;
     QTimer *timer_step;
+    QTimer *timer_move;
 };
 #endif // CROISSANT_H

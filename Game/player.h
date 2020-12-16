@@ -14,7 +14,8 @@ public:
 
 protected:
     void setGroundY(int);
-    void move_horizontal(char);
+    void setSpeed(int speed);
+    void move_horizontal();
     void setPositionVertical(char);
 
     Sprite* getSprite();
@@ -22,13 +23,15 @@ protected:
 
     int getHeight();
     int getWidth();
+    int getSpeed();
 
-    unsigned char getSpeed();
     char getPositionVertical();
 
 protected slots:
-    void step();
     void move_vertical();
+
+private slots:
+    void step();
 
 private:
     Sprite *sprite;
@@ -38,11 +41,11 @@ private:
     int playerX = 0;
     int playerY = 0;
     int groundY = 0;
+    int speed = 20;
 
     unsigned char frame_number = 9;
     unsigned char step_number = 5;
     unsigned char position_frame = 0;
-    unsigned char speed = 20;
 
     QPixmap *player_sprite;
     QTimer *timer_step;
