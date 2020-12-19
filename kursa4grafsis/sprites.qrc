@@ -1,9 +1,0 @@
-<RCC>
-    <qresource prefix="/naruto">
-        <file>img/naruto.png</file>
-        <file>img/shuriken.png</file>
-        <file>img/shuriken2.png</file>
-        <file>img/grob.png</file>
-        <file>img/PixelArt.png</file>
-    </qresource>
-</RCC>
