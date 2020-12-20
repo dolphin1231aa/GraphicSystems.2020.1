@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "4Y57Iizv0SBicQXMcmkoG/wsN8y/uGRuWSyMC43WQ+Q70spY+b65fDReY2GFC7uXydTS6/omrzp8RD+tARIZXQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Пашкевич\\Desktop\\University\\5\\CompGraphics\\KursGS\\KursGS\\KursGS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Пашкевич\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\Пашкевич\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\Пашкевич\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

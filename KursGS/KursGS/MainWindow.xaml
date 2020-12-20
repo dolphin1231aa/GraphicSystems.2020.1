@@ -1,0 +1,47 @@
+﻿<Window x:Class="KursGS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KursGS"
+        mc:Ignorable="d" WindowStyle="None"
+        Title="MainWindow" Height="720" Width="1280" ResizeMode="NoResize" KeyDown="Grid_KeyDown">
+    <Grid>
+        <Image HorizontalAlignment="Center" Height="360" VerticalAlignment="Top" Width="1281" Stretch="UniformToFill" 
+               Source="pack://application:,,,/ImageSource/Track.png" x:Name="TrackImg" Margin="0,344,0,0"/>
+        <Image HorizontalAlignment="Center" Height="350" VerticalAlignment="Top" Width="1280" x:Name="StadiumImg"
+             Margin="0,10,0,0" Stretch="UniformToFill">
+            <Image.Source>
+                <CroppedBitmap Source="pack://application:,,,/ImageSource/Stadium.png" 
+                                SourceRect="0 135 500 135"/>
+            </Image.Source>
+        </Image>
+        <Image x:Name= "EnemyRunner1Img" Width="88" Height="116" Margin="596,386,596,218" 
+               RenderOptions.BitmapScalingMode="NearestNeighbor"/>
+        <Image x:Name= "MainRunnerImg" Width="88" Height="100" Margin="596,462,596,158" 
+               RenderOptions.BitmapScalingMode="NearestNeighbor"/>
+        <Image x:Name= "EnemyRunner2Img" Width="186" Height="90" 
+               RenderOptions.BitmapScalingMode="NearestNeighbor" Margin="547,544,547,86"/>
+
+        <Border Visibility="Visible" BorderThickness="20" BorderBrush="Black"/>
+        <TextBlock HorizontalAlignment="Left" Margin="373,97,0,0" x:Name="ResultBlock"
+                   TextWrapping="Wrap" VerticalAlignment="Top" Height="209" Width="550"
+                   FontSize="100" Foreground="Red" FontWeight="Bold" TextAlignment="Center" 
+                   FontFamily="Snap ITC"/>
+        <TextBlock HorizontalAlignment="Left" Margin="373,0,0,0" x:Name="RestartBlock" Visibility="Hidden"
+            TextWrapping="Wrap" VerticalAlignment="Center" Height="84" Width="550" Text="PRESS ANY KEY TO RESTART"
+            FontSize="30" Foreground="Red" FontWeight="Bold" TextAlignment="Center" 
+            FontFamily="Snap ITC"/>
+        <Grid x:Name="MenuGrid" Visibility="Visible" Background="Black">
+            <TextBlock HorizontalAlignment="Center" Margin="0,60,0,0" Text="SportsRace" Foreground="Gold"
+                       TextWrapping="Wrap" VerticalAlignment="Top" Height="100" Width="1260" FontSize="66"
+                       TextAlignment="Center" FontWeight="Bold" FontFamily="Vineta BT"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,224,0,0" Text="PLAY" Foreground="LightGray"
+                       TextWrapping="Wrap" VerticalAlignment="Top" Height="136" Width="464" FontSize="100"
+                       TextAlignment="Center" FontWeight="Bold" FontFamily="Vineta BT" 
+                       MouseLeftButtonUp="Play_MouseLeftButtonUp"/>
+            <TextBlock HorizontalAlignment="Left" Margin="668,216,0,0"
+                       Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        </Grid>
+    </Grid>
+</Window>
