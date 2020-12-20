@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/">
+        <file>coffee.png</file>
+        <file>croissant.png</file>
+        <file>Enemy_left.png</file>
+        <file>Enemy_right.png</file>
+        <file>grass.png</file>
+        <file>pizza.png</file>
+        <file>Player_left_idle.png</file>
+        <file>Player_left_move.png</file>
+        <file>Player_right_idle.png</file>
+        <file>Player_right_move.png</file>
+        <file>background.png</file>
+        <file>food.mp3</file>
+        <file>death.mp3</file>
+        <file>soundtrack.mp3</file>
+        <file>font.otf</file>
+    </qresource>
+</RCC>
