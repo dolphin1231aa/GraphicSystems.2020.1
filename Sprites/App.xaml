@@ -1,0 +1,92 @@
+﻿<Application x:Class="Sprites.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Sprites"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <SolidColorBrush x:Key="TextColor" Color="#FFD4B911"/>
+        <SolidColorBrush x:Key="hpBarColor" Color="#FFE43E0E"/>
+        <SolidColorBrush x:Key="hpBarBorderBrush" Color="#FF9C2A07"/>
+        <SolidColorBrush x:Key="hpBarBackground" Color="#66420505"/>
+        <SolidColorBrush x:Key="scoreColor" Color="#AA2479FF"/>
+        <SolidColorBrush x:Key="uiColor" Color="#FF926830"/>
+        <SolidColorBrush x:Key="uiActiveColor" Color="#99926830"/>
+
+        <Style x:Key="TextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="Foreground" Value="{StaticResource TextColor}"/>
+        </Style>
+
+        <Style x:Key="ScoreTextStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="35"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="{StaticResource scoreColor}"/>
+        </Style>
+        
+        <Style x:Key="hpBarStyle" TargetType="ProgressBar">
+            <Setter Property="Maximum" Value="100"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Foreground" Value="{StaticResource hpBarColor}"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="{StaticResource hpBarBorderBrush}"/>
+            <Setter Property="Background" Value="{StaticResource hpBarBackground}"/>
+        </Style>
+
+        <Style x:Key="PlayerStyle" TargetType="Image">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Panel.ZIndex" Value="100"/>
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <ScaleTransform CenterX="0" CenterY="0" ScaleX="2" ScaleY="2"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ABitRoundButton" TargetType="Button">
+            <Setter Property="Margin" Value="20,4,20,4"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                            x:Name="outerBorder"
+                            CornerRadius="2"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}">
+
+                            <ContentPresenter Margin="2"
+                                          x:Name="content"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource uiActiveColor}"/>
+                                <Setter Property="BorderBrush" Value="{StaticResource uiColor}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="uiButtonImage" TargetType="Image">
+            <Setter Property="MaxHeight" Value="30"/>
+            <Setter Property="MinHeight" Value="30"/>
+            <Setter Property="MaxWidth" Value="30"/>
+            <Setter Property="MaxWidth" Value="30"/>
+        </Style>
+        
+    </Application.Resources>
+</Application>

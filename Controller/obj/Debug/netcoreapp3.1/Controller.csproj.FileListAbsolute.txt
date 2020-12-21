@@ -1,0 +1,12 @@
+D:\repos\Sprites\Controller\bin\Debug\netcoreapp3.1\Controller.deps.json
+D:\repos\Sprites\Controller\bin\Debug\netcoreapp3.1\Controller.dll
+D:\repos\Sprites\Controller\bin\Debug\netcoreapp3.1\Controller.pdb
+D:\repos\Sprites\Controller\obj\Debug\netcoreapp3.1\Controller.csprojAssemblyReference.cache
+D:\repos\Sprites\Controller\obj\Debug\netcoreapp3.1\Controller.AssemblyInfoInputs.cache
+D:\repos\Sprites\Controller\obj\Debug\netcoreapp3.1\Controller.AssemblyInfo.cs
+D:\repos\Sprites\Controller\obj\Debug\netcoreapp3.1\Controller.csproj.CoreCompileInputs.cache
+D:\repos\Sprites\Controller\obj\Debug\netcoreapp3.1\Controller.dll
+D:\repos\Sprites\Controller\obj\Debug\netcoreapp3.1\Controller.pdb
+D:\repos\Sprites\Controller\bin\Debug\netcoreapp3.1\Model.dll
+D:\repos\Sprites\Controller\bin\Debug\netcoreapp3.1\Model.pdb
+D:\repos\Sprites\Controller\obj\Debug\netcoreapp3.1\Controller.csproj.CopyComplete

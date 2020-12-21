@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "qZYKj5mHeZMmQ7WbbhqUDCvcAFVl4HkAGLd98QArZRdjApZU62N7TqAtomCm7HnTrC+H4HxQ6wVWKUZOl4SxKw==",
+  "success": true,
+  "projectFilePath": "D:\\repos\\Sprites\\Sprites\\Sprites.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\aleks\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\aleks\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\aleks\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

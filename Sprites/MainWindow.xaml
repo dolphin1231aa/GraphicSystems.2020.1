@@ -1,0 +1,144 @@
+﻿<Window x:Class="Sprites.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:ctrl="clr-namespace:Controller;assembly=Controller"
+        d:DataContext="{d:DesignInstance Type=ctrl:MainController}"
+        mc:Ignorable="d"
+        Icon="pack://application:,,,/Resources/Icons/game_icon.png"
+        Title="Dark souls"
+        Height="795" Width="1333"
+        MaxHeight="{Binding ElementName=mainWin, Path=Height}"
+        MinHeight="{Binding ElementName=mainWin, Path=Height}"
+        MaxWidth="{Binding ElementName=mainWin, Path=Width}"
+        MinWidth="{Binding ElementName=mainWin, Path=Width}"
+        x:Name="mainWin"
+        KeyDown="Window_KeyDown">
+
+    <Grid Background="White">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Left hp bar-->
+        <Grid Grid.Row="0"
+              Grid.Column="0"
+              Margin="5,10,0,0"
+              VerticalAlignment="Top"
+              HorizontalAlignment="Left"
+              Panel.ZIndex="100">
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="{Binding LeftPlayer.Name, Mode=OneTime}"
+                       Grid.Row="0" 
+                       Style="{StaticResource TextBlockStyle}"/>
+
+            <ProgressBar  Grid.Row="1"
+                     x:Name="LeftPlayerHpProgressBar"
+                    Style="{StaticResource hpBarStyle}"
+                          Value="{Binding LeftPlayer.Hp, Mode=OneWay}"/>
+
+        </Grid>
+
+        <!--Right hp bar-->
+        <Grid Grid.Row="0"
+              Grid.Column="2"
+              Margin="0,10,5,0"
+              VerticalAlignment="Top"
+              HorizontalAlignment="Right"
+              Panel.ZIndex="100">
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="{Binding RightPlayer.Name, Mode=OneTime}"
+                      Grid.Row="0" Style="{StaticResource TextBlockStyle}"/>
+
+            <ProgressBar  Grid.Row="1"
+                          x:Name="RightPlayerHpProgressBar"
+                          Style="{StaticResource hpBarStyle}"
+                          Value="{Binding RightPlayer.Hp, Mode=OneWay}"/>
+
+        </Grid>
+
+        <!--Background img-->
+        <Image x:Name="backgroundImage"
+               Margin="-20,-20"
+               Source="{Binding BackgroundImage, Mode=OneWay}"
+               Grid.Row="0" Grid.RowSpan="2"
+               Grid.Column="0" Grid.ColumnSpan="3"/>
+
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="0" Grid.RowSpan="2"
+                    Grid.Column="0" Grid.ColumnSpan="3"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Margin="0,10,0,0">
+
+            <Button x:Name="PauseButton"
+                    Visibility="Hidden"
+                    Style="{StaticResource ABitRoundButton}"
+                    Click="PauseButton_Click">
+                <Image Style="{StaticResource uiButtonImage}"
+                       Source="pack://application:,,,/Resources/Icons/pause_icon.png"/>
+            </Button>
+
+            <TextBlock Text="{Binding LeftPlayerScore, Mode=OneWay}" 
+                       Style="{StaticResource ScoreTextStyle}"/>
+            
+            <TextBlock Text=":"
+                       Style="{StaticResource ScoreTextStyle}" 
+                       Foreground="{StaticResource uiColor}"/>
+
+            <TextBlock Text="{Binding RightPlayerScore, Mode=OneWay}" 
+                       Style="{StaticResource ScoreTextStyle}"/>
+
+            <Button x:Name="InfoButton"
+                    Visibility="Hidden"
+                    Style="{StaticResource ABitRoundButton}"
+                    Click="InfoButton_Click">
+                <Image Style="{StaticResource uiButtonImage}"
+                       Source="pack://application:,,,/Resources/Icons/info_icon.png"/>
+            </Button>
+
+        </StackPanel>
+        
+        <!--Left img-->
+        <Image x:Name="LeftPlayer"
+               Grid.Row="0" Grid.RowSpan="2"
+               Grid.Column="0" Grid.ColumnSpan="3"
+               Style="{StaticResource PlayerStyle}"
+               Width="{Binding LeftPlayer.SingleWidth, Mode=OneWay}"
+               Height="{Binding LeftPlayer.SingleHeight, Mode=OneWay}"
+               Margin="{Binding LeftPlayer.Position, Mode=OneWay}"
+               Source="{Binding LeftPlayer.Image, Mode=OneWay}"/>
+
+        <!--Right img-->
+        <Image x:Name="RightPlayer"
+                HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Grid.Row="0" Grid.RowSpan="2"
+               Grid.Column="0" Grid.ColumnSpan="3"
+                Style="{StaticResource PlayerStyle}"
+               Width="{Binding RightPlayer.SingleWidth, Mode=OneWay}"
+               Height="{Binding RightPlayer.SingleHeight, Mode=OneWay}"
+               Margin="{Binding RightPlayer.Position, Mode=OneWay}"
+               Source="{Binding RightPlayer.Image, Mode=OneWay}"/>
+
+    </Grid>
+</Window>
